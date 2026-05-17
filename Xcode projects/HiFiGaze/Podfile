@@ -1,0 +1,4 @@
+target 'HiFiGaze' do
+  use_frameworks!
+  pod 'MediaPipeTasksVision'
+end

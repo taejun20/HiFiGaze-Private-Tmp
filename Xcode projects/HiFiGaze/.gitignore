@@ -1,0 +1,100 @@
+# Xcode
+#
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+# Swift Package Manager
+#
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/xcode/
+.swiftpm/build/
+
+# CocoaPods
+#
+Pods/
+Podfile.lock
+
+# Carthage
+#
+Carthage/Build/
+
+# Accio dependency manager
+#
+Dependencies/
+.accio/
+
+# fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Code coverage
+#
+*.xccovreport
+*.xccovarchive
+
+# Playgrounds
+#
+timeline.xctimeline
+playground.xcworkspace
+
+# App packaging
+#
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Archives
+#
+*.xcarchive
+
+# SwiftUI previews cache
+#
+*.canvas
+
+# macOS
+#
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Time Machine
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# iCloud generated files
+*.icloud
+
+# User-specific Xcode settings (breakpoints, schemes, etc.)
+*.xcuserstate
+
+# Other
+#
+*.swp
+*.swo
+*.tmp

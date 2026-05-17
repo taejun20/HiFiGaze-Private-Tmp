@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eye Tracking Experiment</title>
+
+    <!-- Fullscreen and notch-safe settings for iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>       
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+
+            /* margin: 0;
+            padding: 0;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;*/
+            background-color: black;
+            background-image: none;
+            background-size: cover;         /* 👈 fit width, keep aspect ratio */
+            background-repeat: no-repeat;
+            background-position: top center;    /* 👈 anchor to top */           
+        }
+        #centerWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #startButton {
+            pointer-events: auto;
+            padding: 100px 200px;
+            font-size: 120px;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* smooth for future shifts */
+        }
+        #dot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border: 4px solid white;
+            border-radius: 50%;
+            display: none;
+        }
+        #arrow {
+            position: absolute;
+            font-size: 240px;
+            display: none;
+            transform: translate(-50%, -50%);
+            text-shadow: 
+                -2px -2px 0 white,
+                2px -2px 0 white,
+                -2px 2px 0 white,
+                2px 2px 0 white;
+        }
+        #responseButtons {
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        #leftButton, #rightButton {
+            padding: 60px 120px;
+            font-size: 100px;
+            cursor: pointer;
+        }
+        #redoButton {
+            padding: 60px 120px;
+            font-size: 100px;
+            cursor: pointer;
+            display: none;
+            margin-top: -400px;
+            z-index: 1;
+        }
+        #wrongMessage {
+            position: absolute;
+            font-size: 120px;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="centerWrapper">
+        <button id="startButton">Start</button>
+    </div>
+    <div id="dot"></div>
+    <div id="arrow"></div>
+    <button id="redoButton">Redo</button>
+    <div id="responseButtons">
+        <div style="display: flex; gap: 50px; margin-top: 100px;">
+            <button id="leftButton">Left</button>
+            <button id="rightButton">Right</button>
+        </div>
+    </div>
+    <div id="wrongMessage">Wrong, Redo it</div>
+    <script>
+        const socket = io();
+        let dotStartTime = null;
+        let arrowDirection = null;
+
+        // Function to emit dimensions
+        function emitDimensions() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            socket.emit('dimensions', { width, height });
+        }
+
+        // Emit dimensions on load and resize
+        window.addEventListener('load', emitDimensions);
+        window.addEventListener('resize', emitDimensions);
+
+        // Handle dot position updates
+        socket.on('dot_position', function(data) {
+            const dot = document.getElementById('dot');
+            dot.style.left = (data.x - (40+4+4)/2) + 'px';
+            dot.style.top = (data.y - (40+4+4)/2) + 'px';
+        });
+
+        // Handle experiment state updates
+        socket.on('experiment_state', function(data) {
+            const startButton = document.getElementById('startButton');
+            const dot = document.getElementById('dot');
+            const arrow = document.getElementById('arrow');
+            const responseButtons = document.getElementById('responseButtons');
+            const redoButton = document.getElementById('redoButton');
+            const wrongMessage = document.getElementById('wrongMessage');
+
+            switch(data.state) {
+                case 'start':
+                    startButton.style.display = 'block';
+                    dot.style.display = 'none';
+                    arrow.style.display = 'none';
+                    responseButtons.style.display = 'none';
+                    redoButton.style.display = 'none';
+                    wrongMessage.style.display = 'none';
+                    break;
+                case 'show_dot':
+                    startButton.style.display = 'none';
+                    dot.style.display = 'block';
+                    arrow.style.display = 'none';
+                    responseButtons.style.display = 'none';
+                    redoButton.style.display = 'none';
+                    wrongMessage.style.display = 'none';
+                    dotStartTime = Date.now();
+                    break;
+                case 'show_arrow':
+                    dot.style.display = 'none';
+                    arrow.style.display = 'block';
+                    arrow.textContent = data.direction === 'left' ? '←' : '→';
+                    arrow.style.left = dot.style.left;
+                    arrow.style.top = dot.style.top;
+                    arrowDirection = data.direction;
+                    setTimeout(() => {
+                        arrow.style.display = 'none';
+                    }, 50);
+                    break;
+                case 'show_response_buttons':
+                    responseButtons.style.display = 'flex';
+                    redoButton.style.display = 'block';
+                    break;
+                case 'wrong_response':
+                    responseButtons.style.display = 'none';
+                    redoButton.style.display = 'block';
+                    wrongMessage.style.display = 'block';
+                    break;
+            }
+        });
+
+        // Handle background image updates
+        socket.on('update_background', function(data) {
+            document.body.style.backgroundImage = `url("/static/screenshot-10k-1170x2372/${data.filename}")`;
+        });
+
+        // Button event listeners
+        document.getElementById('startButton').addEventListener('click', function() {
+            socket.emit('start_experiment');
+        });
+
+        document.getElementById('leftButton').addEventListener('click', function() {
+            socket.emit('response', {direction: 'left'});
+        });
+
+        document.getElementById('rightButton').addEventListener('click', function() {
+            socket.emit('response', {direction: 'right'});
+        });
+
+        document.getElementById('redoButton').addEventListener('click', function() {
+            socket.emit('redo_trial');
+        });
+    </script>
+</body>
+</html>

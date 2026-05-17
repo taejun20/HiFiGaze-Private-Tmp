@@ -1,0 +1,24 @@
+{
+  "Inputs" : {
+    "eye" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "eye_lmk" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "screen" : {
+      "MLFeatureShortDescription" : ""
+    }
+  },
+  "Outputs" : {
+    "output" : {
+      "MLFeatureShortDescription" : ""
+    }
+  },
+  "TrainingInputs" : {
+
+  },
+  "States" : {
+
+  }
+}

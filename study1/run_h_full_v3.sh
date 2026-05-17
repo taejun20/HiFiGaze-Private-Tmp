@@ -1,0 +1,23 @@
+#!/bin/bash
+python 4-5.\ h_train_and_eval.py -g 2 -t 1 2 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 -v 22 24 25 -e 26
+python 4-5.\ h_train_and_eval.py -g 2 -t 26 1 2 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -v 21 22 24 -e 25
+python 4-5.\ h_train_and_eval.py -g 2 -t 25 26 1 2 6 7 8 9 10 11 12 13 14 15 16 17 18 19 -v 20 21 22 -e 24
+python 4-5.\ h_train_and_eval.py -g 2 -t 24 25 26 1 2 6 7 8 9 10 11 12 13 14 15 16 17 18 -v 19 20 21 -e 22
+python 4-5.\ h_train_and_eval.py -g 2 -t 22 24 25 26 1 2 6 7 8 9 10 11 12 13 14 15 16 17 -v 18 19 20 -e 21
+python 4-5.\ h_train_and_eval.py -g 2 -t 21 22 24 25 26 1 2 6 7 8 9 10 11 12 13 14 15 16 -v 17 18 19 -e 20
+python 4-5.\ h_train_and_eval.py -g 2 -t 20 21 22 24 25 26 1 2 6 7 8 9 10 11 12 13 14 15 -v 16 17 18 -e 19
+python 4-5.\ h_train_and_eval.py -g 2 -t 19 20 21 22 24 25 26 1 2 6 7 8 9 10 11 12 13 14 -v 15 16 17 -e 18
+python 4-5.\ h_train_and_eval.py -g 2 -t 18 19 20 21 22 24 25 26 1 2 6 7 8 9 10 11 12 13 -v 14 15 16 -e 17
+python 4-5.\ h_train_and_eval.py -g 2 -t 17 18 19 20 21 22 24 25 26 1 2 6 7 8 9 10 11 12 -v 13 14 15 -e 16
+python 4-5.\ h_train_and_eval.py -g 2 -t 16 17 18 19 20 21 22 24 25 26 1 2 6 7 8 9 10 11 -v 12 13 14 -e 15
+python 4-5.\ h_train_and_eval.py -g 2 -t 15 16 17 18 19 20 21 22 24 25 26 1 2 6 7 8 9 10 -v 11 12 13 -e 14
+python 4-5.\ h_train_and_eval.py -g 2 -t 14 15 16 17 18 19 20 21 22 24 25 26 1 2 6 7 8 9 -v 10 11 12 -e 13
+python 4-5.\ h_train_and_eval.py -g 2 -t 13 14 15 16 17 18 19 20 21 22 24 25 26 1 2 6 7 8 -v 9 10 11 -e 12
+python 4-5.\ h_train_and_eval.py -g 2 -t 12 13 14 15 16 17 18 19 20 21 22 24 25 26 1 2 6 7 -v 8 9 10 -e 11
+python 4-5.\ h_train_and_eval.py -g 2 -t 11 12 13 14 15 16 17 18 19 20 21 22 24 25 26 1 2 6 -v 7 8 9 -e 10
+python 4-5.\ h_train_and_eval.py -g 2 -t 10 11 12 13 14 15 16 17 18 19 20 21 22 24 25 26 1 2 -v 6 7 8 -e 9
+python 4-5.\ h_train_and_eval.py -g 2 -t 9 10 11 12 13 14 15 16 17 18 19 20 21 22 24 25 26 1 -v 2 6 7 -e 8
+python 4-5.\ h_train_and_eval.py -g 2 -t 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 24 25 26 -v 1 2 6 -e 7
+python 4-5.\ h_train_and_eval.py -g 2 -t 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 24 25 -v 26 1 2 -e 6
+python 4-5.\ h_train_and_eval.py -g 2 -t 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 24 -v 25 26 1 -e 2
+python 4-5.\ h_train_and_eval.py -g 2 -t 2 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 -v 24 25 26 -e 1

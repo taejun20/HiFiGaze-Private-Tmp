@@ -1,0 +1,55 @@
+import torch
+import torch.nn as nn   
+import torch.nn.functional as F
+import timm
+
+MASK = -999
+
+class GazeModelSOE_ED(nn.Module):
+    def __init__(self):
+        super().__init__()
+     
+        # FC layers for eye landmarks
+        self.fc1_landmarks = nn.Linear(8, 128)
+        self.fc2_landmarks = nn.Linear(128, 16)
+        self.fc3_landmarks = nn.Linear(16, 16)
+
+        # MLP head
+        self.fc4 = nn.Linear(4 + 1 + 1 + 1 + 16, 8)  # Added 2 for valid flags
+        self.fc5 = nn.Linear(8, 4)
+        self.fc6 = nn.Linear(4, 2)
+
+    def forward(self, soe_landmarks, eye_dominance, eye_landmarks):
+        # Create valid flags for left and right SOE based on both x and y coordinates
+        left_valid = ~((soe_landmarks[:, 0] == MASK) & (soe_landmarks[:, 1] == MASK))  # [B]
+        right_valid = ~((soe_landmarks[:, 2] == MASK) & (soe_landmarks[:, 3] == MASK))  # [B]
+        
+        # Mask SOE coordinates to 0 when both x and y are MASK
+        soe_masked = soe_landmarks.clone()
+        soe_masked[~left_valid, 0:2] = 0  # Mask left eye coordinates
+        soe_masked[~right_valid, 2:4] = 0  # Mask right eye coordinates
+        
+        # Convert valid flags to tensors for concatenation
+        left_valid_tensor = left_valid.float().unsqueeze(1)   # [B, 1]
+        right_valid_tensor = right_valid.float().unsqueeze(1) # [B, 1]
+
+        eye_dominance_tensor = eye_dominance.float().unsqueeze(1)  # [B, 1]
+
+        # Process landmarks
+        eye_landmarks_tensor = F.relu(self.fc1_landmarks(eye_landmarks))
+        eye_landmarks_tensor = F.relu(self.fc2_landmarks(eye_landmarks_tensor))
+        eye_landmarks_tensor = F.relu(self.fc3_landmarks(eye_landmarks_tensor)) 
+
+        # Concatenate all features including valid flags and masked SOE
+        concat = torch.cat([
+            soe_masked,           # 4 (masked SOE coordinates)
+            left_valid_tensor,    # 1
+            right_valid_tensor,   # 1
+            eye_dominance_tensor, # 1 (0: left, 1: right)
+            eye_landmarks_tensor, # 16
+        ], dim=1)
+
+        x = F.dropout(F.relu(self.fc4(concat)), p=0.12, training=self.training)
+        x = F.relu(self.fc5(x))
+        x = self.fc6(x)        
+        return x

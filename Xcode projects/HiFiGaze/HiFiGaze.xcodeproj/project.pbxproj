@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		239A97D48F600231DED1B96C /* Pods_HiFiGaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0255B7B938714ABC6542D /* Pods_HiFiGaze.framework */; };
+		325440082EF8FA74007EAD0D /* HiFiGaze_RGB.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 325440072EF8FA74007EAD0D /* HiFiGaze_RGB.mlpackage */; };
+		3254400A2EF8FAC2007EAD0D /* HiFiGaze_RGBT.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 325440092EF8FAC2007EAD0D /* HiFiGaze_RGBT.mlpackage */; };
+		3254401A2EF90BF3007EAD0D /* img1_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 325440172EF90BF3007EAD0D /* img1_thumbnail.png */; };
+		3254401B2EF90BF3007EAD0D /* img2_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 325440182EF90BF3007EAD0D /* img2_thumbnail.png */; };
+		326D57252F076312005898C4 /* MainViewSocket_Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D57242F076312005898C4 /* MainViewSocket_Debug.swift */; };
+		326D57272F076587005898C4 /* OneEuroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D57262F076585005898C4 /* OneEuroFilter.swift */; };
+		326DAE882F9EEF1100446C57 /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326DAE872F9EEF1100446C57 /* CalibrationView.swift */; };
+		3285C6592F078A5C00B90493 /* img3_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3285C6582F078A5C00B90493 /* img3_thumbnail.png */; };
+		3285C65A2F078A5C00B90493 /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3285C6572F078A5C00B90493 /* img3.jpg */; };
+		32AC6C002EE80184004A8B2F /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AC6BFF2EE80184004A8B2F /* CameraPreviewView.swift */; };
+		32DB9CCF2EEFF29D002BB8C0 /* SocketClient_Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB9CCE2EEFF299002BB8C0 /* SocketClient_Debug.swift */; };
+		89C255E82EE28D960047E19C /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C255DC2EE28D960047E19C /* CameraManager.swift */; };
+		89C255EA2EE28D960047E19C /* HiFiGazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C255DF2EE28D960047E19C /* HiFiGazeApp.swift */; };
+		89C255EB2EE28D960047E19C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C255E12EE28D960047E19C /* InitialView.swift */; };
+		89C255EC2EE28D960047E19C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C255E22EE28D960047E19C /* MainView.swift */; };
+		89C256012EE28D960047E19C /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255A82EE28D960047E19C /* img1.jpg */; };
+		89C256022EE28D960047E19C /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255A92EE28D960047E19C /* img2.jpg */; };
+		89C256152EE28D960047E19C /* face_landmarker.task in Resources */ = {isa = PBXBuildFile; fileRef = 89C255BD2EE28D960047E19C /* face_landmarker.task */; };
+		89C256162EE28D960047E19C /* 00119.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255BF2EE28D960047E19C /* 00119.jpg */; };
+		89C256172EE28D960047E19C /* 00119_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C02EE28D960047E19C /* 00119_left.png */; };
+		89C256182EE28D960047E19C /* 00119_lms.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C12EE28D960047E19C /* 00119_lms.json */; };
+		89C256192EE28D960047E19C /* 00119_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C22EE28D960047E19C /* 00119_right.png */; };
+		89C2561A2EE28D960047E19C /* 00120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C32EE28D960047E19C /* 00120.jpg */; };
+		89C2561B2EE28D960047E19C /* 00120_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C42EE28D960047E19C /* 00120_left.png */; };
+		89C2561C2EE28D960047E19C /* 00120_lms.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C52EE28D960047E19C /* 00120_lms.json */; };
+		89C2561D2EE28D960047E19C /* 00120_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C62EE28D960047E19C /* 00120_right.png */; };
+		89C2561E2EE28D960047E19C /* 00121.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C72EE28D960047E19C /* 00121.jpg */; };
+		89C2561F2EE28D960047E19C /* 00121_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C82EE28D960047E19C /* 00121_left.png */; };
+		89C256202EE28D960047E19C /* 00121_lms.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C255C92EE28D960047E19C /* 00121_lms.json */; };
+		89C256212EE28D960047E19C /* 00121_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255CA2EE28D960047E19C /* 00121_right.png */; };
+		89C256222EE28D960047E19C /* 00521.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255CB2EE28D960047E19C /* 00521.jpg */; };
+		89C256232EE28D960047E19C /* 00521_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255CC2EE28D960047E19C /* 00521_left.png */; };
+		89C256242EE28D960047E19C /* 00521_lms.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C255CD2EE28D960047E19C /* 00521_lms.json */; };
+		89C256252EE28D960047E19C /* 00521_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255CE2EE28D960047E19C /* 00521_right.png */; };
+		89C256262EE28D960047E19C /* 00789.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255CF2EE28D960047E19C /* 00789.jpg */; };
+		89C256272EE28D960047E19C /* 00789_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D02EE28D960047E19C /* 00789_left.png */; };
+		89C256282EE28D960047E19C /* 00789_lms.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D12EE28D960047E19C /* 00789_lms.json */; };
+		89C256292EE28D960047E19C /* 00789_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D22EE28D960047E19C /* 00789_right.png */; };
+		89C2562A2EE28D960047E19C /* 01064.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D32EE28D960047E19C /* 01064.jpg */; };
+		89C2562B2EE28D960047E19C /* 01064_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D42EE28D960047E19C /* 01064_left.png */; };
+		89C2562C2EE28D960047E19C /* 01064_lms.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D52EE28D960047E19C /* 01064_lms.json */; };
+		89C2562D2EE28D960047E19C /* 01064_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D62EE28D960047E19C /* 01064_right.png */; };
+		89C2562E2EE28D960047E19C /* eye_landmarks.npy in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D72EE28D960047E19C /* eye_landmarks.npy */; };
+		89C2562F2EE28D960047E19C /* left_eye.npy in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D82EE28D960047E19C /* left_eye.npy */; };
+		89C256302EE28D960047E19C /* right_eye.npy in Resources */ = {isa = PBXBuildFile; fileRef = 89C255D92EE28D960047E19C /* right_eye.npy */; };
+		89C256312EE28D960047E19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C255DB2EE28D960047E19C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07B0255B7B938714ABC6542D /* Pods_HiFiGaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiFiGaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1044B153FE1C34BA1BB9F44C /* Pods-HiFiGaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiFiGaze.debug.xcconfig"; path = "Target Support Files/Pods-HiFiGaze/Pods-HiFiGaze.debug.xcconfig"; sourceTree = "<group>"; };
+		32387D602EB3355B00A7624D /* MediaPipeTasksVision.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MediaPipeTasksVision.xcframework; path = Pods/MediaPipeTasksVision/frameworks/MediaPipeTasksVision.xcframework; sourceTree = "<group>"; };
+		32387D642EB3356400A7624D /* MediaPipeTasksCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MediaPipeTasksCommon.xcframework; path = Pods/MediaPipeTasksCommon/frameworks/MediaPipeTasksCommon.xcframework; sourceTree = "<group>"; };
+		325440072EF8FA74007EAD0D /* HiFiGaze_RGB.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HiFiGaze_RGB.mlpackage; sourceTree = "<group>"; };
+		325440092EF8FAC2007EAD0D /* HiFiGaze_RGBT.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = HiFiGaze_RGBT.mlpackage; sourceTree = "<group>"; };
+		325440172EF90BF3007EAD0D /* img1_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1_thumbnail.png; sourceTree = "<group>"; };
+		325440182EF90BF3007EAD0D /* img2_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2_thumbnail.png; sourceTree = "<group>"; };
+		326D57242F076312005898C4 /* MainViewSocket_Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewSocket_Debug.swift; sourceTree = "<group>"; };
+		326D57262F076585005898C4 /* OneEuroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneEuroFilter.swift; sourceTree = "<group>"; };
+		326DAE872F9EEF1100446C57 /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		3280F49B2EB1D5E400CB4964 /* HiFiGaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiFiGaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3285C6572F078A5C00B90493 /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img3.jpg; sourceTree = "<group>"; };
+		3285C6582F078A5C00B90493 /* img3_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3_thumbnail.png; sourceTree = "<group>"; };
+		32AC6BFF2EE80184004A8B2F /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		32DB9CCE2EEFF299002BB8C0 /* SocketClient_Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient_Debug.swift; sourceTree = "<group>"; };
+		89C255A82EE28D960047E19C /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
+		89C255A92EE28D960047E19C /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
+		89C255BD2EE28D960047E19C /* face_landmarker.task */ = {isa = PBXFileReference; lastKnownFileType = file; path = face_landmarker.task; sourceTree = "<group>"; };
+		89C255BF2EE28D960047E19C /* 00119.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00119.jpg; sourceTree = "<group>"; };
+		89C255C02EE28D960047E19C /* 00119_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00119_left.png; sourceTree = "<group>"; };
+		89C255C12EE28D960047E19C /* 00119_lms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 00119_lms.json; sourceTree = "<group>"; };
+		89C255C22EE28D960047E19C /* 00119_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00119_right.png; sourceTree = "<group>"; };
+		89C255C32EE28D960047E19C /* 00120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00120.jpg; sourceTree = "<group>"; };
+		89C255C42EE28D960047E19C /* 00120_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00120_left.png; sourceTree = "<group>"; };
+		89C255C52EE28D960047E19C /* 00120_lms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 00120_lms.json; sourceTree = "<group>"; };
+		89C255C62EE28D960047E19C /* 00120_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00120_right.png; sourceTree = "<group>"; };
+		89C255C72EE28D960047E19C /* 00121.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00121.jpg; sourceTree = "<group>"; };
+		89C255C82EE28D960047E19C /* 00121_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00121_left.png; sourceTree = "<group>"; };
+		89C255C92EE28D960047E19C /* 00121_lms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 00121_lms.json; sourceTree = "<group>"; };
+		89C255CA2EE28D960047E19C /* 00121_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00121_right.png; sourceTree = "<group>"; };
+		89C255CB2EE28D960047E19C /* 00521.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00521.jpg; sourceTree = "<group>"; };
+		89C255CC2EE28D960047E19C /* 00521_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00521_left.png; sourceTree = "<group>"; };
+		89C255CD2EE28D960047E19C /* 00521_lms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 00521_lms.json; sourceTree = "<group>"; };
+		89C255CE2EE28D960047E19C /* 00521_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00521_right.png; sourceTree = "<group>"; };
+		89C255CF2EE28D960047E19C /* 00789.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00789.jpg; sourceTree = "<group>"; };
+		89C255D02EE28D960047E19C /* 00789_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00789_left.png; sourceTree = "<group>"; };
+		89C255D12EE28D960047E19C /* 00789_lms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 00789_lms.json; sourceTree = "<group>"; };
+		89C255D22EE28D960047E19C /* 00789_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 00789_right.png; sourceTree = "<group>"; };
+		89C255D32EE28D960047E19C /* 01064.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01064.jpg; sourceTree = "<group>"; };
+		89C255D42EE28D960047E19C /* 01064_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01064_left.png; sourceTree = "<group>"; };
+		89C255D52EE28D960047E19C /* 01064_lms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 01064_lms.json; sourceTree = "<group>"; };
+		89C255D62EE28D960047E19C /* 01064_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01064_right.png; sourceTree = "<group>"; };
+		89C255D72EE28D960047E19C /* eye_landmarks.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = eye_landmarks.npy; sourceTree = "<group>"; };
+		89C255D82EE28D960047E19C /* left_eye.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = left_eye.npy; sourceTree = "<group>"; };
+		89C255D92EE28D960047E19C /* right_eye.npy */ = {isa = PBXFileReference; lastKnownFileType = file; path = right_eye.npy; sourceTree = "<group>"; };
+		89C255DB2EE28D960047E19C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89C255DC2EE28D960047E19C /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		89C255DE2EE28D960047E19C /* face_landmarker.task */ = {isa = PBXFileReference; lastKnownFileType = file; path = face_landmarker.task; sourceTree = "<group>"; };
+		89C255DF2EE28D960047E19C /* HiFiGazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiFiGazeApp.swift; sourceTree = "<group>"; };
+		89C255E02EE28D960047E19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89C255E12EE28D960047E19C /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		89C255E22EE28D960047E19C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		967F1AF6A9C679514AEA982A /* Pods-HiFiGaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiFiGaze.release.xcconfig"; path = "Target Support Files/Pods-HiFiGaze/Pods-HiFiGaze.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3280F4982EB1D5E400CB4964 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				239A97D48F600231DED1B96C /* Pods_HiFiGaze.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C850B084B59B23A39E418E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32387D642EB3356400A7624D /* MediaPipeTasksCommon.xcframework */,
+				32387D602EB3355B00A7624D /* MediaPipeTasksVision.xcframework */,
+				07B0255B7B938714ABC6542D /* Pods_HiFiGaze.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3280F4922EB1D5E400CB4964 = {
+			isa = PBXGroup;
+			children = (
+				89C255E32EE28D960047E19C /* HiFiGaze */,
+				3280F49C2EB1D5E400CB4964 /* Products */,
+				BA41D7E2AF5812DD5DEBACFF /* Pods */,
+				1C850B084B59B23A39E418E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3280F49C2EB1D5E400CB4964 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3280F49B2EB1D5E400CB4964 /* HiFiGaze.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89C255922EE28D960047E19C /* coreml */ = {
+			isa = PBXGroup;
+			children = (
+				325440092EF8FAC2007EAD0D /* HiFiGaze_RGBT.mlpackage */,
+				325440072EF8FA74007EAD0D /* HiFiGaze_RGB.mlpackage */,
+			);
+			path = coreml;
+			sourceTree = "<group>";
+		};
+		89C255A72EE28D960047E19C /* thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = thumbnail;
+			sourceTree = "<group>";
+		};
+		89C255BC2EE28D960047E19C /* img */ = {
+			isa = PBXGroup;
+			children = (
+				89C255A72EE28D960047E19C /* thumbnail */,
+				89C255A82EE28D960047E19C /* img1.jpg */,
+				325440172EF90BF3007EAD0D /* img1_thumbnail.png */,
+				89C255A92EE28D960047E19C /* img2.jpg */,
+				325440182EF90BF3007EAD0D /* img2_thumbnail.png */,
+				3285C6572F078A5C00B90493 /* img3.jpg */,
+				3285C6582F078A5C00B90493 /* img3_thumbnail.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		89C255BE2EE28D960047E19C /* mediapipe */ = {
+			isa = PBXGroup;
+			children = (
+				89C255BD2EE28D960047E19C /* face_landmarker.task */,
+			);
+			path = mediapipe;
+			sourceTree = "<group>";
+		};
+		89C255DA2EE28D960047E19C /* test */ = {
+			isa = PBXGroup;
+			children = (
+				89C255BF2EE28D960047E19C /* 00119.jpg */,
+				89C255C02EE28D960047E19C /* 00119_left.png */,
+				89C255C12EE28D960047E19C /* 00119_lms.json */,
+				89C255C22EE28D960047E19C /* 00119_right.png */,
+				89C255C32EE28D960047E19C /* 00120.jpg */,
+				89C255C42EE28D960047E19C /* 00120_left.png */,
+				89C255C52EE28D960047E19C /* 00120_lms.json */,
+				89C255C62EE28D960047E19C /* 00120_right.png */,
+				89C255C72EE28D960047E19C /* 00121.jpg */,
+				89C255C82EE28D960047E19C /* 00121_left.png */,
+				89C255C92EE28D960047E19C /* 00121_lms.json */,
+				89C255CA2EE28D960047E19C /* 00121_right.png */,
+				89C255CB2EE28D960047E19C /* 00521.jpg */,
+				89C255CC2EE28D960047E19C /* 00521_left.png */,
+				89C255CD2EE28D960047E19C /* 00521_lms.json */,
+				89C255CE2EE28D960047E19C /* 00521_right.png */,
+				89C255CF2EE28D960047E19C /* 00789.jpg */,
+				89C255D02EE28D960047E19C /* 00789_left.png */,
+				89C255D12EE28D960047E19C /* 00789_lms.json */,
+				89C255D22EE28D960047E19C /* 00789_right.png */,
+				89C255D32EE28D960047E19C /* 01064.jpg */,
+				89C255D42EE28D960047E19C /* 01064_left.png */,
+				89C255D52EE28D960047E19C /* 01064_lms.json */,
+				89C255D62EE28D960047E19C /* 01064_right.png */,
+				89C255D72EE28D960047E19C /* eye_landmarks.npy */,
+				89C255D82EE28D960047E19C /* left_eye.npy */,
+				89C255D92EE28D960047E19C /* right_eye.npy */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		89C255E32EE28D960047E19C /* HiFiGaze */ = {
+			isa = PBXGroup;
+			children = (
+				89C255922EE28D960047E19C /* coreml */,
+				89C255BC2EE28D960047E19C /* img */,
+				89C255BE2EE28D960047E19C /* mediapipe */,
+				89C255DA2EE28D960047E19C /* test */,
+				89C255DB2EE28D960047E19C /* Assets.xcassets */,
+				89C255E12EE28D960047E19C /* InitialView.swift */,
+				326DAE872F9EEF1100446C57 /* CalibrationView.swift */,
+				89C255E22EE28D960047E19C /* MainView.swift */,
+				89C255DC2EE28D960047E19C /* CameraManager.swift */,
+				32AC6BFF2EE80184004A8B2F /* CameraPreviewView.swift */,
+				326D57262F076585005898C4 /* OneEuroFilter.swift */,
+				89C255DF2EE28D960047E19C /* HiFiGazeApp.swift */,
+				89C255DE2EE28D960047E19C /* face_landmarker.task */,
+				32DB9CCE2EEFF299002BB8C0 /* SocketClient_Debug.swift */,
+				326D57242F076312005898C4 /* MainViewSocket_Debug.swift */,
+				89C255E02EE28D960047E19C /* Info.plist */,
+			);
+			path = HiFiGaze;
+			sourceTree = "<group>";
+		};
+		BA41D7E2AF5812DD5DEBACFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1044B153FE1C34BA1BB9F44C /* Pods-HiFiGaze.debug.xcconfig */,
+				967F1AF6A9C679514AEA982A /* Pods-HiFiGaze.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3280F49A2EB1D5E400CB4964 /* HiFiGaze */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3280F4A62EB1D5E500CB4964 /* Build configuration list for PBXNativeTarget "HiFiGaze" */;
+			buildPhases = (
+				6037E98CDD40B9ECE5223B5D /* [CP] Check Pods Manifest.lock */,
+				3280F4972EB1D5E400CB4964 /* Sources */,
+				3280F4982EB1D5E400CB4964 /* Frameworks */,
+				3280F4992EB1D5E400CB4964 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HiFiGaze;
+			productName = HiFiGaze;
+			productReference = 3280F49B2EB1D5E400CB4964 /* HiFiGaze.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3280F4932EB1D5E400CB4964 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					3280F49A2EB1D5E400CB4964 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 3280F4962EB1D5E400CB4964 /* Build configuration list for PBXProject "HiFiGaze" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3280F4922EB1D5E400CB4964;
+			productRefGroup = 3280F49C2EB1D5E400CB4964 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3280F49A2EB1D5E400CB4964 /* HiFiGaze */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3280F4992EB1D5E400CB4964 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C256012EE28D960047E19C /* img1.jpg in Resources */,
+				89C256022EE28D960047E19C /* img2.jpg in Resources */,
+				89C256152EE28D960047E19C /* face_landmarker.task in Resources */,
+				89C256162EE28D960047E19C /* 00119.jpg in Resources */,
+				89C256172EE28D960047E19C /* 00119_left.png in Resources */,
+				89C256182EE28D960047E19C /* 00119_lms.json in Resources */,
+				89C256192EE28D960047E19C /* 00119_right.png in Resources */,
+				89C2561A2EE28D960047E19C /* 00120.jpg in Resources */,
+				89C2561B2EE28D960047E19C /* 00120_left.png in Resources */,
+				3285C6592F078A5C00B90493 /* img3_thumbnail.png in Resources */,
+				3285C65A2F078A5C00B90493 /* img3.jpg in Resources */,
+				89C2561C2EE28D960047E19C /* 00120_lms.json in Resources */,
+				89C2561D2EE28D960047E19C /* 00120_right.png in Resources */,
+				89C2561E2EE28D960047E19C /* 00121.jpg in Resources */,
+				89C2561F2EE28D960047E19C /* 00121_left.png in Resources */,
+				89C256202EE28D960047E19C /* 00121_lms.json in Resources */,
+				89C256212EE28D960047E19C /* 00121_right.png in Resources */,
+				89C256222EE28D960047E19C /* 00521.jpg in Resources */,
+				89C256232EE28D960047E19C /* 00521_left.png in Resources */,
+				89C256242EE28D960047E19C /* 00521_lms.json in Resources */,
+				89C256252EE28D960047E19C /* 00521_right.png in Resources */,
+				89C256262EE28D960047E19C /* 00789.jpg in Resources */,
+				89C256272EE28D960047E19C /* 00789_left.png in Resources */,
+				89C256282EE28D960047E19C /* 00789_lms.json in Resources */,
+				89C256292EE28D960047E19C /* 00789_right.png in Resources */,
+				89C2562A2EE28D960047E19C /* 01064.jpg in Resources */,
+				89C2562B2EE28D960047E19C /* 01064_left.png in Resources */,
+				89C2562C2EE28D960047E19C /* 01064_lms.json in Resources */,
+				89C2562D2EE28D960047E19C /* 01064_right.png in Resources */,
+				89C2562E2EE28D960047E19C /* eye_landmarks.npy in Resources */,
+				89C2562F2EE28D960047E19C /* left_eye.npy in Resources */,
+				89C256302EE28D960047E19C /* right_eye.npy in Resources */,
+				3254401A2EF90BF3007EAD0D /* img1_thumbnail.png in Resources */,
+				3254401B2EF90BF3007EAD0D /* img2_thumbnail.png in Resources */,
+				89C256312EE28D960047E19C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6037E98CDD40B9ECE5223B5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiFiGaze-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3280F4972EB1D5E400CB4964 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326DAE882F9EEF1100446C57 /* CalibrationView.swift in Sources */,
+				32DB9CCF2EEFF29D002BB8C0 /* SocketClient_Debug.swift in Sources */,
+				89C255E82EE28D960047E19C /* CameraManager.swift in Sources */,
+				326D57252F076312005898C4 /* MainViewSocket_Debug.swift in Sources */,
+				89C255EA2EE28D960047E19C /* HiFiGazeApp.swift in Sources */,
+				89C255EB2EE28D960047E19C /* InitialView.swift in Sources */,
+				3254400A2EF8FAC2007EAD0D /* HiFiGaze_RGBT.mlpackage in Sources */,
+				325440082EF8FA74007EAD0D /* HiFiGaze_RGB.mlpackage in Sources */,
+				326D57272F076587005898C4 /* OneEuroFilter.swift in Sources */,
+				89C255EC2EE28D960047E19C /* MainView.swift in Sources */,
+				32AC6C002EE80184004A8B2F /* CameraPreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3280F4A42EB1D5E500CB4964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 62UN2L78Y8;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3280F4A52EB1D5E500CB4964 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 62UN2L78Y8;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3280F4A72EB1D5E500CB4964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1044B153FE1C34BA1BB9F44C /* Pods-HiFiGaze.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62UN2L78Y8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HiFiGaze/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Demo-Gaze";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "HiFiGaze uses the camera to analyze your eyes for gaze.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tj.HiFiGaze-Gaze";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3280F4A82EB1D5E500CB4964 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 967F1AF6A9C679514AEA982A /* Pods-HiFiGaze.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62UN2L78Y8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HiFiGaze/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Demo-Gaze";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "HiFiGaze uses the camera to analyze your eyes for gaze.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tj.HiFiGaze-Gaze";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3280F4962EB1D5E400CB4964 /* Build configuration list for PBXProject "HiFiGaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3280F4A42EB1D5E500CB4964 /* Debug */,
+				3280F4A52EB1D5E500CB4964 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3280F4A62EB1D5E500CB4964 /* Build configuration list for PBXNativeTarget "HiFiGaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3280F4A72EB1D5E500CB4964 /* Debug */,
+				3280F4A82EB1D5E500CB4964 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3280F4932EB1D5E400CB4964 /* Project object */;
+}
